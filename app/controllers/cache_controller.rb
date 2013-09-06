@@ -21,10 +21,20 @@ class CacheController < ApplicationController
     value = params[:value]
     expiration = params[:expiration]
 
-    Rails.cache.write(key, {value: value, expiration: expiration})
+    if !expiration || is_numeric_string(expiration)
+      Rails.cache.write(key, {value: value, expiration: expiration})
 
-    render :nothing => true, :status => :ok
+      render :nothing => true, :status => :ok
+    else
+      render :json => { "error" => "wrong expiration format"}, :status => :bad_request
+    end
 
   end
 
+  private
+
+  def is_numeric_string(string)
+    return true if string =~ /^\d+$/
+    true if Float(string) rescue false
+  end
 end
