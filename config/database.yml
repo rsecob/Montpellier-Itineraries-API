@@ -49,7 +49,8 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: apiRest_production
+  database: dfekjj9gnlea2e
   pool: 5
-  username:
-  password:
+  port: 5432
+  username: kgkrpjsoqwcmyc
+  password: Dap4ZvBoRIYlSgkvqVOxszg8Ps
