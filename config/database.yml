@@ -15,10 +15,12 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: apiRest_development
   pool: 5
-  username:
-  password:
+  database: dfekjj9gnlea2e
+  host: ec2-54-221-224-138.compute-1.amazonaws.com
+  port: 5432
+  username: kgkrpjsoqwcmyc
+  password: Dap4ZvBoRIYlSgkvqVOxszg8Ps
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -41,16 +43,18 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: apiRest_test
   pool: 5
-  username:
-  password:
+  database: dfekjj9gnlea2e
+  host: ec2-54-221-224-138.compute-1.amazonaws.com
+  port: 5432
+  username: kgkrpjsoqwcmyc
+  password: Dap4ZvBoRIYlSgkvqVOxszg8Ps
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: dfekjj9gnlea2e
   pool: 5
+  database: dfekjj9gnlea2e
   host: ec2-54-221-224-138.compute-1.amazonaws.com
   port: 5432
   username: kgkrpjsoqwcmyc
