@@ -17,6 +17,19 @@ ApiRest::Application.routes.draw do
   get "bistro/mult/:int1/:int2" => 'bistro#mult'
   get "bistro/sub/:int1/:int2" => 'bistro#sub'
 
+  ##############
+  ##  Crypto
+  ##############
+
+  get "/crypto/md5/:str" => 'crypto#md5'
+  get "/crypto/sha1/:str" => 'crypto#sha1'
+
+  ##############
+  ##  Utils
+  ##############
+
+  get "/utils/date" => 'utils#date'
+
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
