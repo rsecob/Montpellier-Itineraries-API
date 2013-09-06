@@ -5,7 +5,7 @@ class UtilsController < ApplicationController
     time = Time.new
     day = time.day.to_s
     month = time.month.to_s
-    year = time.year
+    year = time.year.to_s
 
     day = (day.length == 1) ? "0#{day}" : day
     month = (month.length == 1) ? "0#{month}" : month

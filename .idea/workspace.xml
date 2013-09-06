@@ -8,7 +8,7 @@
     <file path="/Dummy.txt" changelist="7a1f1c48-4cdb-45fd-9e24-9aa7748eb6bf" time="1378456127544" ignored="false" />
     <file path="/bistro_controller.rb" changelist="7a1f1c48-4cdb-45fd-9e24-9aa7748eb6bf" time="1378461354725" ignored="false" />
     <file path="/crypto_controller.rb" changelist="7a1f1c48-4cdb-45fd-9e24-9aa7748eb6bf" time="1378466368765" ignored="false" />
-    <file path="/utils_controller.rb" changelist="7a1f1c48-4cdb-45fd-9e24-9aa7748eb6bf" time="1378466878671" ignored="false" />
+    <file path="/utils_controller.rb" changelist="7a1f1c48-4cdb-45fd-9e24-9aa7748eb6bf" time="1378467463301" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +49,7 @@
       <file leaf-file-name="utils_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/utils_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="36" selection-start="242" selection-end="242" vertical-scroll-proportion="0.2857143">
+            <state line="7" column="25" selection-start="163" selection-end="163" vertical-scroll-proportion="0.2">
               <folding />
             </state>
           </provider>
@@ -543,7 +543,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/utils_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="36" selection-start="242" selection-end="242" vertical-scroll-proportion="0.2857143">
+        <state line="7" column="25" selection-start="163" selection-end="163" vertical-scroll-proportion="0.2">
           <folding />
         </state>
       </provider>
