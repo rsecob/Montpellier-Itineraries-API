@@ -2,15 +2,16 @@ class CacheController < ApplicationController
 
   def get
     key = params[:key]
-    cache = Cache.where(key: key).first
-    timestamp = Time.now.to_i
-
-    if cache && cache.expiration.to_i > timestamp
-        render :json => cache.value, :status => :ok
-    else
-      if cache
-        cache.delete
+    object = Rails.cache.read(key)
+    if object
+      value = object[:value]
+      expiration = object[:expiration]
+      if !expiration || expiration.to_i > Time.now.to_i
+        render :json => value, :status => :ok
+      else
+        render :json => { "error" => "key expired"}, :status => :bad_request
       end
+    else
       render :json => { "error" => "key does not exist"}, :status => :bad_request
     end
   end
@@ -19,16 +20,10 @@ class CacheController < ApplicationController
     key = params[:key]
     value = params[:value]
     expiration = params[:expiration]
-    cache = Cache.where(key: key).first || Cache.new
-    cache.key = key
-    cache.value = value
-    cache.expiration = expiration
 
-    if cache.save
-      render :nothing => true, :status => :ok
-    else
-      render :json => { "error" => "Cannot save in database" }, :status => :bad_request
-    end
+    Rails.cache.write(key, {value: value, expiration: expiration})
+
+    render :nothing => true, :status => :ok
 
   end
 
