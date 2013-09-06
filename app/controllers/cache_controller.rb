@@ -18,24 +18,8 @@ class CacheController < ApplicationController
   def set
     key = params[:key]
     value = params[:value]
-    cache = Cache.where(key: key).first ||= Cache.new
-    cache.key = key
-    cache.value = value
-
-    if cache.save
-      render :nothing => true, :status => :ok
-    else
-      render :json => { "error" => "Cannot save in database" }, :status => :bad_request
-    end
-
-  end
-
-  def set_expiration
-    key = params[:key]
-    value = params[:value]
     expiration = params[:expiration]
     cache = Cache.where(key: key).first ||= Cache.new
-
     cache.key = key
     cache.value = value
     cache.expiration = expiration
