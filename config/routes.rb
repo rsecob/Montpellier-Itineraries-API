@@ -18,6 +18,14 @@ ApiRest::Application.routes.draw do
   get "bistro/sub/:int1/:int2" => 'bistro#sub'
 
   ##############
+  ##  Cache
+  ##############
+
+  get "cache/get/:key" => 'cache#get'
+  put "cache/set" => 'cache#set'
+  put "cache/set/:key/:value/:expiration" => 'cache#set_expiration'
+
+  ##############
   ##  Crypto
   ##############
 
