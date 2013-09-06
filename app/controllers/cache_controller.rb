@@ -5,7 +5,7 @@ class CacheController < ApplicationController
     cache = Cache.where(key: key).first
     timestamp = Time.now.to_i
 
-    if cache && cache.expiration.to_i < timestamp
+    if cache && cache.expiration.to_i > timestamp
         render :json => cache.value, :status => :ok
     else
       if cache
@@ -19,7 +19,7 @@ class CacheController < ApplicationController
     key = params[:key]
     value = params[:value]
     expiration = params[:expiration]
-    cache = Cache.where(key: key).first ||= Cache.new
+    cache = Cache.where(key: key).first || Cache.new
     cache.key = key
     cache.value = value
     cache.expiration = expiration

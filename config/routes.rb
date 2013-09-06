@@ -23,7 +23,6 @@ ApiRest::Application.routes.draw do
 
   get "cache/get/:key" => 'cache#get'
   put "cache/set" => 'cache#set'
-  put "cache/set/:key/:value/:expiration" => 'cache#set_expiration'
 
   ##############
   ##  Crypto
